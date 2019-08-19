@@ -29,13 +29,6 @@ const Index = props => (
         <PostLink title="Learn Next.js is awesome" />
         <PostLink title="Deploy apps with Zeit" />
 
-        <h2>My Blog</h2>
-        <ul>
-            <BlogLink id="hello-nextjs" />
-            <BlogLink id="learn-nextjs" />
-            <BlogLink id="deploy-nextjs" />
-        </ul>
-
         <h1>Batman TV Shows</h1>
         <ul>
         {props.shows.map(show => (
