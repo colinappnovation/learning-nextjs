@@ -9,25 +9,36 @@ const PostLink = props => (
       <Link href={`/post?title=${props.title}`}>
         <a>{props.title}</a>
       </Link>
-    </li>
-  );
+      <style jsx>{`
+      li {
+        list-style: none;
+        margin: 5px 0;
+      }
 
-  const BlogLink = props => (
-    <li>
-      <Link href="/p/[id]" as={`/p/${props.id}`}>
-        <a>{props.id}</a>
-      </Link>
-    </li>
+      a {
+        text-decoration: none;
+        color: green;
+        font-family: 'Arial';
+      }
+
+      a:hover {
+        opacity: 0.6;
+      }
+    `}</style>
+    </li> 
   );
 
 const Index = props => (
     <Layout>
+        <h1>My Blog</h1>
         <p>Hello Next.js</p>
 
         <h2>Dynamic links</h2>
-        <PostLink title="Hello Next.js" />
-        <PostLink title="Learn Next.js is awesome" />
-        <PostLink title="Deploy apps with Zeit" />
+        <ul>
+          <PostLink title="Hello Next.js" />
+          <PostLink title="Learn Next.js is awesome" />
+          <PostLink title="Deploy apps with Zeit" />
+        </ul>
 
         <h1>Batman TV Shows</h1>
         <ul>
@@ -39,6 +50,31 @@ const Index = props => (
             </li>
         ))}
         </ul>
+
+        <style jsx>{`
+        h1,
+        a {
+          font-family: 'Arial';
+        }
+
+        ul {
+          padding: 0;
+        }
+
+        li {
+          list-style: none;
+          margin: 5px 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: blue;
+        }
+
+        a:hover {
+          opacity: 0.6;
+        }
+      `}</style>
 
     </Layout>
 );
